@@ -24,6 +24,11 @@ public class ViewSelectionScreen : MonoBehaviour {
 	{
 		if(!_selectionActive) return;
 
-		GUI.Button(new Rect(10, 10, 150, 100), "Hello");
+		if(GUI.Button(new Rect(10, 10, 150, 100), "Cat"))
+		{
+			//Cat selected!
+			Events.instance.Raise(new ViewSelectedEvent(CharacterView.Cat));
+			_selectionActive = false;
+		}
 	}
 }
