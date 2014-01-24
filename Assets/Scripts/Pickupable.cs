@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Pickupable : MonoBehaviour 
 {
-	public PlayerController.CharacterView PickedBy;
+	public CharacterView PickedBy;
 	// Use this for initialization
 	void Start () 
 	{
