@@ -31,8 +31,13 @@ public class Player : MonoBehaviour
 		if ( mPathRecalculateTimer >= 1.0f )
 		{
 			mPathRecalculateTimer = 0.0f;
-			mSeeker.StartPath( transform.position, mTarget.position, OnPathComplete );
+			//mSeeker.StartPath( transform.position, mTarget.position, OnPathComplete );
 		}
+	}
+
+	public void WalkTo( Vector3 vPosition )
+	{
+		mSeeker.StartPath( transform.position, vPosition, OnPathComplete );
 	}
 
 	public void OnPathComplete (Path p) 

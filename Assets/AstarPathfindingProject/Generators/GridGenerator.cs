@@ -938,7 +938,8 @@ AstarPath.active.Scan();
 		 * \see CalculateConnections */
 		[System.NonSerialized]
 		protected int[] corners;
-		
+		static bool s_bIsometricHack = true;
+
 		/** Calculates the grid connections for a single node. Convenience function, it's faster to use CalculateConnections(GridNode[],int,int,node) but that will only show when calculating for a large number of nodes
 		  * \todo Test this function, should work ok, but you never know */
 		public static void CalculateConnections (GridNode node) {
@@ -986,13 +987,20 @@ AstarPath.active.Scan();
 				
 				GridNode other = nodes[index+neighbourOffsets[i]] as GridNode;
 				
-				if (IsValidConnection (node, other)) {
-					node.SetConnectionInternal (i, true);
+				if (IsValidConnection (node, other)) 
+				{
+					if ( !s_bIsometricHack )
+					{
+						node.SetConnectionInternal (i, true);
+					}
 					//SetNodeConnection (node, i, true);
 					corners[i]++;
 					corners[j]++;
 				} else {
-					node.SetConnectionInternal (i, false);
+					if (!s_bIsometricHack )
+					{
+						node.SetConnectionInternal (i, false);
+					}
 					//SetNodeConnection (node, i, false);
 				}
 			}
