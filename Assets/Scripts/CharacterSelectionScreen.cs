@@ -24,6 +24,6 @@ public class CharacterSelectionScreen : MonoBehaviour {
 	{
 		if(!_selectionActive) return;
 
-		GUI.Button(Rect(10, 10, 150, 100), "Hello");
+		GUI.Button(new Rect(10, 10, 150, 100), "Hello");
 	}
 }
