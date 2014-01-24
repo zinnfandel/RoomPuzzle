@@ -20,7 +20,7 @@ public class ViewSelectionScreen : MonoBehaviour {
 	
 	}
 
-	void OnGui() 
+	void OnGUI() 
 	{
 		if(!_selectionActive) return;
 
