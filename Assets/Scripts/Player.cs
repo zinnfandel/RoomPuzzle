@@ -4,6 +4,7 @@ using Pathfinding;
 
 public class Player : MonoBehaviour 
 {
+	public static Player s_Player;
 	// Publics
 	public Transform 	mTarget;
 	public float		mSpeed = 1.0f;
@@ -20,6 +21,7 @@ public class Player : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		s_Player = this;
 		mSeeker = GetComponent<Seeker>();
 
 	}

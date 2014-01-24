@@ -85,6 +85,7 @@ GameObject:
   - 33: {fileID: 63656583}
   - 65: {fileID: 63656582}
   - 23: {fileID: 63656581}
+  - 114: {fileID: 63656584}
   m_Layer: 12
   m_Name: Cube
   m_TagString: Untagged
@@ -143,6 +144,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 63656579}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &63656584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 63656579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b0006845676eb4288a991bc71200f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PickedBy: 0
 --- !u!1 &228062634
 GameObject:
   m_ObjectHideFlags: 0
@@ -613,7 +626,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1315119855}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.95492315, y: -.14117521, z: 0}
+  m_LocalPosition: {x: -3.95492315, y: -2.2622242, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 63656580}

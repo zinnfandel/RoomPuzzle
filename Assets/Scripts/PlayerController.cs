@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour 
 {
+	public static PlayerController s_PlayerController;
+
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
 
@@ -18,6 +20,7 @@ public class PlayerController : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		s_PlayerController = this;
 		SwitchView( CharacterView.Kid );
 	}
 	
