@@ -1,6 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public class ViewSelectionEvent : GameEvent
+{
+	public CharacterView View {get;set;}
+}
+
+public enum CharacterView
+{
+	Cat,
+	Kid,
+	Grandma
+};
+
 public class PlayerController : MonoBehaviour 
 {
 	public static PlayerController s_PlayerController;
@@ -8,12 +20,7 @@ public class PlayerController : MonoBehaviour
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
 
-	public enum CharacterView
-	{
-		Cat,
-		Kid,
-		Grandma
-	};
+
 	CharacterView mCharacterView;
 
 	public CharacterView GetView() { return mCharacterView; }
@@ -21,6 +28,7 @@ public class PlayerController : MonoBehaviour
 	void Start () 
 	{
 		s_PlayerController = this;
+		Events.instance.AddListener<ViewSelectionEvent>(OnViewSelected);
 		SwitchView( CharacterView.Kid );
 	}
 	
@@ -39,6 +47,11 @@ public class PlayerController : MonoBehaviour
 
 	void OnMouseDown() 
 	{
+	}
+
+	public void OnViewSelected(ViewSelectionEvent e)
+	{
+		SwitchView(e.View);
 	}
 
 	public void SwitchView( CharacterView view )
