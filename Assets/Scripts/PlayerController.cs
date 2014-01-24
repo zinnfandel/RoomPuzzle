@@ -1,11 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ViewSelectionEvent : GameEvent
-{
-	public CharacterView View {get;set;}
-}
-
 public enum CharacterView
 {
 	Cat,
@@ -28,7 +23,7 @@ public class PlayerController : MonoBehaviour
 	void Start () 
 	{
 		s_PlayerController = this;
-		Events.instance.AddListener<ViewSelectionEvent>(OnViewSelected);
+		Events.instance.AddListener<ViewSelectedEvent>(OnViewSelected);
 		SwitchView( CharacterView.Kid );
 	}
 	
@@ -49,7 +44,7 @@ public class PlayerController : MonoBehaviour
 	{
 	}
 
-	public void OnViewSelected(ViewSelectionEvent e)
+	public void OnViewSelected(ViewSelectedEvent e)
 	{
 		SwitchView(e.View);
 	}

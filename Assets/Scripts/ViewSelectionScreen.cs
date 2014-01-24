@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CharacterSelectionScreen : MonoBehaviour {
+public class ViewSelectionScreen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Events.instance.AddListener<SelectCharacterEvent>(OnSelectCharacterEvent);
+		Events.instance.AddListener<SelectViewEvent>(OnSelectViewEvent);
 	}
 
 	private bool _selectionActive;
 
-	void OnSelectCharacterEvent(SelectCharacterEvent e)
+	void OnSelectViewEvent(SelectViewEvent e)
 	{
 		_selectionActive = true;
 	}
