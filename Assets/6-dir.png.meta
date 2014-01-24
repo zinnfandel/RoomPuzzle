@@ -1,0 +1,94 @@
+fileFormatVersion: 2
+guid: 1a1f0449af3d6d1438065e2b2b095e3e
+TextureImporter:
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings:
+  - buildTarget: iPhone
+    maxTextureSize: 1024
+    textureFormat: -2
+    compressionQuality: 50
+  spriteSheet:
+    sprites:
+    - name: 6-dir_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 13
+        width: 21
+        height: 36
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: 6-dir_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 12
+        width: 23
+        height: 37
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: 6-dir_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 11
+        width: 21
+        height: 38
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: 6-dir_3
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 12
+        width: 31
+        height: 37
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: 6-dir_4
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 12
+        width: 27
+        height: 37
+      alignment: 7
+      pivot: {x: .5, y: 0}
+  spritePackingTag: 
+  userData: 
