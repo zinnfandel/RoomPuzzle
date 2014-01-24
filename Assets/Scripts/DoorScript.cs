@@ -20,20 +20,20 @@ public class DoorScript : MonoBehaviour
 	void OnMouseDown()
 	{
 		Debug.Log( "Door clicked." );
-		PlayerController.CharacterView view = mPlayerController.GetView();
-		if ( view == PlayerController.CharacterView.Cat )
+		CharacterView view = mPlayerController.GetView();
+		if ( view == CharacterView.Cat )
 		{
-			mPlayerController.SwitchView( PlayerController.CharacterView.Grandma );
+			mPlayerController.SwitchView( CharacterView.Grandma );
 		}
 
-		else if ( view == PlayerController.CharacterView.Grandma )
+		else if ( view == CharacterView.Grandma )
 		{
-			mPlayerController.SwitchView( PlayerController.CharacterView.Kid );
+			mPlayerController.SwitchView( CharacterView.Kid );
 		}
 
-		else if ( view == PlayerController.CharacterView.Kid )
+		else if ( view == CharacterView.Kid )
 		{
-			mPlayerController.SwitchView( PlayerController.CharacterView.Cat );
+			mPlayerController.SwitchView( CharacterView.Cat );
 		}
 
 	}
