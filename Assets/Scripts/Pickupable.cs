@@ -4,10 +4,11 @@ using System.Collections;
 public class Pickupable : MonoBehaviour 
 {
 	public CharacterView PickedBy;
+	bool	mWasPicked = false;
 	// Use this for initialization
 	void Start () 
 	{
-	
+		mWasPicked = false;
 	}
 	
 	// Update is called once per frame
@@ -17,8 +18,11 @@ public class Pickupable : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		if ( PlayerController.s_PlayerController.GetView() == PickedBy )
+		Debug.Log ( "Pickupable clicked!" );
+		if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )
 		{
+			mWasPicked = true;
+			transform.position = TableSpot.GetTableSpot();
 			Debug.Log ( "Picked!" );
 		}
 	}
