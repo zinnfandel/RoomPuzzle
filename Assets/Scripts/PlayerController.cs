@@ -19,14 +19,26 @@ public class PlayerController : MonoBehaviour
 
 	CharacterView mCharacterView;
 
+	bool mPickupIssued;
+	Pickupable mPickupTarget;
+
 	public CharacterView GetView() { return mCharacterView; }
 	// Use this for initialization
 	void Start () 
 	{
 		s_PlayerController = this;
+
+		mPickupIssued = false;
+		mPickupTarget = null;
 		Events.instance.AddListener<ViewSelectedEvent>(OnViewSelected);
 		Events.instance.AddListener<SelectViewEvent>(OnViewSelecting);
 		SwitchView( CharacterView.Child );
+	}
+
+	public void Pickup( Pickupable pTarget )
+	{
+		mPickupIssued = true;
+		mPickupTarget = pTarget;
 	}
 	
 	// Update is called once per frame
@@ -37,18 +49,37 @@ public class PlayerController : MonoBehaviour
 		//GetComponent<Animator>().Play(Walking.name);
 		if ( Input.GetMouseButtonDown( 0 ) )
 		{
+			
+			Debug.Log( "Test" );
 			Vector3 vWorldMousePosition = Camera.main.ScreenToWorldPoint( Input.mousePosition );
 			vWorldMousePosition.z = 0.0f;
 			Debug.Log( vWorldMousePosition );
 			mTargetPosition.position = vWorldMousePosition;
 			mPlayer.WalkTo( vWorldMousePosition );
 
+			if ( mPickupIssued )
+			{
+				mPickupIssued = false;
+			}
+
+			else
+			{
+				mPickupTarget = null;
+			}
+
 			Events.instance.Raise(new PlaySoundEvent(SoundLibrarySelection.Meow));
+		}
+
+		else if ( mPickupTarget != null && mPlayer.IsWalking() == false )
+		{
+			mPickupTarget.Pickup();
+			mPickupTarget = null;
 		}
 	}
 
 	void OnMouseDown() 
 	{
+
 	}
 
 	public void OnViewSelected(ViewSelectedEvent e)

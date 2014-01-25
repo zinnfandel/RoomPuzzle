@@ -5,6 +5,8 @@ public class Pickupable : MonoBehaviour
 {
 	public CharacterView PickedBy;
 	bool	mWasPicked = false;
+
+
 	// Use this for initialization
 	void Start () 
 	{
@@ -12,14 +14,19 @@ public class Pickupable : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 
 	void OnMouseDown()
 	{
-		return;
 		Debug.Log ( "Pickupable clicked!" );
+		PlayerController.s_PlayerController.Pickup( this );
+	}
+
+	public void Pickup()
+	{
 		if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )
 		{
 			mWasPicked = true;
