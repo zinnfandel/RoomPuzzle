@@ -17,8 +17,18 @@ public class DoorScript : MonoBehaviour
 	
 	}
 
+	void OnTriggerEnter2D( Collider2D collision )
+	{
+		Events.instance.Raise(new SelectViewEvent());
+	}
+
+	void OnTriggerExit2D( Collider2D collision )
+	{
+	}
+
 	void OnMouseDown()
 	{
+		return;
 		Debug.Log( "Door clicked." );
 		CharacterView view = mPlayerController.GetView();
 		if ( view == CharacterView.Cat )
