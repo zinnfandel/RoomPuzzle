@@ -18,6 +18,7 @@ public class Pickupable : MonoBehaviour
 
 	void OnMouseDown()
 	{
+		return;
 		Debug.Log ( "Pickupable clicked!" );
 		if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )
 		{

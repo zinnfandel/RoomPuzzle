@@ -3,13 +3,12 @@ using System.Collections;
 
 public class DoorScript : MonoBehaviour 
 {
-	bool bActive = false;
 	public PlayerController mPlayerController;
 
 	// Use this for initialization
 	void Start () 
 	{
-		bActive = false;
+
 	}
 	
 	// Update is called once per frame
@@ -21,12 +20,10 @@ public class DoorScript : MonoBehaviour
 	void OnTriggerEnter2D( Collider2D collision )
 	{
 		Events.instance.Raise(new SelectViewEvent());
-		bActive = false;
 	}
 
 	void OnTriggerExit2D( Collider2D collision )
 	{
-		bActive = true;
 	}
 
 	void OnMouseDown()
