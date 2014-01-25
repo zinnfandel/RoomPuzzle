@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
 			mTargetPosition.position = vWorldMousePosition;
 			mPlayer.WalkTo( vWorldMousePosition );
 
-
+			Events.instance.Raise(new PlaySoundEvent(SoundLibrarySelection.Meow));
 		}
 	}
 
