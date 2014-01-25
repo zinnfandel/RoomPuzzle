@@ -1,12 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum SoundLibrarySelection
+{
+	Meow
+}
+
 public class PlaySoundEvent : GameEvent {
 
-	public AudioClip ClipToPlay { get; set; }
+	public SoundLibrarySelection SoundToPlay { get; set; }
 
-	public PlaySoundEvent(AudioClip theClip)
+	public PlaySoundEvent(SoundLibrarySelection theSound)
 	{
-		ClipToPlay = theClip;
+		SoundToPlay = theSound;
 	}
 }

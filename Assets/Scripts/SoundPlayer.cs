@@ -4,6 +4,7 @@ using System.Collections;
 public class SoundPlayer : MonoBehaviour {
 
 	public AudioSource source;
+	public AudioClip[] clips;
 
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,17 @@ public class SoundPlayer : MonoBehaviour {
 
 	private void OnPlaySound(PlaySoundEvent e)
 	{
-		source.PlayOneShot(e.ClipToPlay);
+		AudioClip selectedClip;
+		switch(e.SoundToPlay)
+		{
+			case SoundLibrarySelection.Meow:
+				selectedClip = clips[0];
+				break;
+			default:
+				selectedClip = clips[0];
+				break;
+		}
+
+		source.PlayOneShot(selectedClip);
 	}
 }
