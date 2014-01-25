@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
 
-	public AnimationClip Walking;
-	public AnimationClip Idle;
-
 	CharacterView mCharacterView;
 
 	public CharacterView GetView() { return mCharacterView; }
@@ -32,7 +29,7 @@ public class PlayerController : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		GetComponent<Animator>().Play(Walking.name);
+		//GetComponent<Animator>().Play(Walking.name);
 		if ( Input.GetMouseButtonDown( 0 ) )
 		{
 			Vector3 vWorldMousePosition = Camera.main.ScreenToWorldPoint( Input.mousePosition );
