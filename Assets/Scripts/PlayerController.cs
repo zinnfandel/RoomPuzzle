@@ -15,9 +15,6 @@ public class PlayerController : MonoBehaviour
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
 
-	public AnimationClip Walking;
-	public AnimationClip Idle;
-
 	CharacterView mCharacterView;
 
 	public CharacterView GetView() { return mCharacterView; }
