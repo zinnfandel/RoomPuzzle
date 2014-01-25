@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using Pathfinding;
 
 public class Player : MonoBehaviour 
 {
@@ -27,7 +26,6 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{	
-
 	}
 
 	public void WalkTo( Vector3 vPosition )
