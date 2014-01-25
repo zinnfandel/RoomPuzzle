@@ -4,7 +4,7 @@ using System.Collections;
 public enum CharacterView
 {
 	Cat,
-	Kid,
+	Child,
 	Grandma
 };
 
@@ -15,6 +15,8 @@ public class PlayerController : MonoBehaviour
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
 
+	private bool _active;
+
 	CharacterView mCharacterView;
 
 	public CharacterView GetView() { return mCharacterView; }
@@ -23,13 +25,16 @@ public class PlayerController : MonoBehaviour
 	{
 		s_PlayerController = this;
 		Events.instance.AddListener<ViewSelectedEvent>(OnViewSelected);
-		SwitchView( CharacterView.Kid );
+		Events.instance.AddListener<SelectViewEvent>(OnViewSelecting);
+		SwitchView( CharacterView.Child );
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		GetComponent<Animator>().Play(Walking.name);
+		if(!_active) return;
+
+		//GetComponent<Animator>().Play(Walking.name);
 		if ( Input.GetMouseButtonDown( 0 ) )
 		{
 			Vector3 vWorldMousePosition = Camera.main.ScreenToWorldPoint( Input.mousePosition );
@@ -48,14 +53,20 @@ public class PlayerController : MonoBehaviour
 
 	public void OnViewSelected(ViewSelectedEvent e)
 	{
+		_active = true;
 		SwitchView(e.View);
+	}
+
+	public void OnViewSelecting(SelectViewEvent e)
+	{
+		_active = false;
 	}
 
 	public void SwitchView( CharacterView view )
 	{
 		mCharacterView = view;
 		
-		if ( view == CharacterView.Kid )
+		if ( view == CharacterView.Child )
 		{
 			ShowKidView();
 		}

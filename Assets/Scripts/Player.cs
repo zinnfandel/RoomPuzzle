@@ -13,12 +13,14 @@ public class Player : MonoBehaviour
 	private AStarPath	mPath;
 	private int 		mCurrentWaypoint = 0;
 
+	public Vector2 movingDirection;
 
 	float mPathRecalculateTimer = 0.0f;
 
 	// Use this for initialization
 	void Start () 
 	{
+		movingDirection = Vector2.zero;
 		s_Player = this;
 
 	}
@@ -55,11 +57,17 @@ public class Player : MonoBehaviour
 		{
 			Debug.Log ("End Of Path Reached");
 			mPath = null;
+
+			movingDirection = Vector2.zero;
+
 			return;
 		}
 		
 		//Direction to the next waypoint
 		Vector3 dir = ( mPath.GetNode( mCurrentWaypoint ).transform.position - transform.position ).normalized;
+
+		movingDirection = dir;
+
 		dir *= mSpeed * Time.fixedDeltaTime;
 		transform.position += dir;
 
