@@ -27,6 +27,11 @@ public class Usable : MonoBehaviour
 			if ( UsedWith == null || UsedWith == Pickupable.GetCurrent() )
 			{
 				Debug.Log( "Usable activated" );
+				if ( UsedWith )
+				{
+					UsedWith.gameObject.SetActive( false );
+				}
+
 				if ( Reveals )
 				{
 					Reveals.SetActive( true );
