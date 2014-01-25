@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4a2030126948bac4cbbb1b31a81fb1c9
+guid: 2f7f4061e7617324b9fb4c32f707b298
 TextureImporter:
   serializedVersion: 2
   mipmaps:
@@ -30,7 +30,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 7
@@ -44,6 +44,42 @@ TextureImporter:
     textureFormat: -2
     compressionQuality: 50
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: GrandmaWalk_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 35
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: GrandmaWalk_1
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 35
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: GrandmaWalk_2
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
+    - name: GrandmaWalk_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2
+        width: 16
+        height: 30
+      alignment: 7
+      pivot: {x: .5, y: 0}
   spritePackingTag: 
   userData: 

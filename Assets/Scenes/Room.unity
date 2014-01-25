@@ -1189,7 +1189,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 8
   m_SortingLayerID: 0
-  m_Sprite: {fileID: 21300000, guid: 76f143a067b64804398cc61053ee9a43, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2f7f4061e7617324b9fb4c32f707b298, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &486282983
 Transform:
@@ -2131,7 +2131,7 @@ Animator:
   m_GameObject: {fileID: 1102893718}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6a8d6def2259b7d4faa861735d775037, type: 2}
+  m_Controller: {fileID: 9100000, guid: eae24f262724c444fb1556c72284a656, type: 2}
   m_CullingMode: 0
   m_ApplyRootMotion: 1
   m_AnimatePhysics: 0
@@ -2200,6 +2200,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mTargetPosition: {fileID: 1708188108}
   mPlayer: {fileID: 1102893723}
+  Walking: {fileID: 7400000, guid: ba4ca4b569facea458f9daf0acec74eb, type: 2}
+  Idle: {fileID: 7400000, guid: 24839c26ba3219045957b4b58b2f8925, type: 2}
 --- !u!61 &1102893725
 BoxCollider2D:
   m_ObjectHideFlags: 0
