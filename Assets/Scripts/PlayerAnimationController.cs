@@ -18,6 +18,19 @@ public class PlayerAnimationController : MonoBehaviour {
 		if(player.movingDirection != Vector2.zero)
 		{
 			animator.Play(WalkingAnimation.name);
+
+			if(player.movingDirection.x > 0)
+			{
+				var scale = transform.localScale;
+				scale.x = Mathf.Abs(scale.x);
+				transform.localScale = scale;
+			}
+			else
+			{
+				var scale = transform.localScale;
+				scale.x = -Mathf.Abs(scale.x);
+				transform.localScale = scale;
+			}
 		}
 		else 
 		{
