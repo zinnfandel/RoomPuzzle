@@ -28,24 +28,6 @@ public class DoorScript : MonoBehaviour
 
 	void OnMouseDown()
 	{
-		return;
-		Debug.Log( "Door clicked." );
-		CharacterView view = mPlayerController.GetView();
-		if ( view == CharacterView.Cat )
-		{
-			mPlayerController.SwitchView( CharacterView.Grandma );
-		}
-
-		else if ( view == CharacterView.Grandma )
-		{
-			mPlayerController.SwitchView( CharacterView.Kid );
-		}
-
-		else if ( view == CharacterView.Kid )
-		{
-			mPlayerController.SwitchView( CharacterView.Cat );
-		}
-
 	}
 
 
