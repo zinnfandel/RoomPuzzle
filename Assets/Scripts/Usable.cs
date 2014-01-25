@@ -6,6 +6,7 @@ public class Usable : MonoBehaviour
 	public Pickupable UsedWith = null;
 	public GameObject Reveals = null;
 	public CharacterView UsedBy;
+	public bool DisableAfterUse = false;
 	// Use this for initialization
 	void Start () 
 	{
@@ -29,6 +30,11 @@ public class Usable : MonoBehaviour
 				if ( Reveals )
 				{
 					Reveals.SetActive( true );
+				}
+
+				if ( DisableAfterUse )
+				{
+					this.gameObject.SetActive( false );
 				}
 			}
 		}
