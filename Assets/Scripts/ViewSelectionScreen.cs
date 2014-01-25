@@ -48,11 +48,32 @@ public class ViewSelectionScreen : MonoBehaviour {
 		var screenRect = new Rect(0, 0, Screen.width, Screen.height);
 		GUI.DrawTexture(screenRect, BackgroundTexture, ScaleMode.ScaleToFit);
 
-		/*
-		GUI.DrawTexture(grandmaRect, UnselectedCircle, ScaleMode.ScaleToFit);
-		GUI.DrawTexture(childRect, UnselectedCircle, ScaleMode.ScaleToFit);
-		GUI.DrawTexture(catRect, UnselectedCircle, ScaleMode.ScaleToFit);
-		*/
+		if(grandmaRect.Contains(Event.current.mousePosition))
+		{
+			GUI.DrawTexture(grandmaRect, SelectedCircle, ScaleMode.ScaleToFit);
+		}
+		else 
+		{
+			GUI.DrawTexture(grandmaRect, UnselectedCircle, ScaleMode.ScaleToFit);
+		}
+
+		if(childRect.Contains(Event.current.mousePosition))
+		{
+			GUI.DrawTexture(childRect, SelectedCircle, ScaleMode.ScaleToFit);
+		}
+		else 
+		{
+			GUI.DrawTexture(childRect, UnselectedCircle, ScaleMode.ScaleToFit);
+		}
+
+		if(catRect.Contains(Event.current.mousePosition))
+		{
+			GUI.DrawTexture(catRect, SelectedCircle, ScaleMode.ScaleToFit);
+		}
+		else 
+		{
+			GUI.DrawTexture(catRect, UnselectedCircle, ScaleMode.ScaleToFit);
+		}
 
 		GUI.DrawTexture(grandmaRect, GrandmaButton, ScaleMode.ScaleToFit);
 		GUI.DrawTexture(childRect, ChildButton, ScaleMode.ScaleToFit);

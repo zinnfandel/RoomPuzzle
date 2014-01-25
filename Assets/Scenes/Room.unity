@@ -4238,6 +4238,9 @@ MonoBehaviour:
   GrandmaButton: {fileID: 2800000, guid: efb91b5c4a4dfeb4b9881c5345bdef44, type: 3}
   ChildButton: {fileID: 2800000, guid: 77a553d23db38f74d89af35ac5d1ccd0, type: 3}
   CatButton: {fileID: 2800000, guid: 0e1d6426a7af7bd40a59eb873bddbbe1, type: 3}
+  UnselectedCircle: {fileID: 2800000, guid: 2d72c23b9092faa40bc2fda6973419b8, type: 3}
+  SelectedCircle: {fileID: 2800000, guid: 2a32f6b596a54544e8d08607f3bf67be, type: 3}
+  BackgroundTexture: {fileID: 2800000, guid: 4ca44a6abb1d88b4fa551f351ded723a, type: 3}
   guiStyle:
     m_Name: 
     m_Normal:
