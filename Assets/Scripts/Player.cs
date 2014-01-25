@@ -30,6 +30,14 @@ public class Player : MonoBehaviour
 	{	
 	}
 
+	public bool IsWalking()
+	{
+		if ( mPath != null )
+			return true;
+
+		return false;
+	}
+
 	public void WalkTo( Vector3 vPosition )
 	{
 		mPath = AStarGraph.GetPath( transform.position, vPosition );
