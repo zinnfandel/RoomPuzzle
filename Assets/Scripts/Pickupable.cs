@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Pickupable : MonoBehaviour 
 {
+	public static Pickupable s_CurrentPickup;
+
 	public CharacterView PickedBy;
 	public bool			InvisibleToOthers = false;
 
@@ -48,12 +50,33 @@ public class Pickupable : MonoBehaviour
 	void OnMouseDown()
 	{
 		Debug.Log ( "Pickupable clicked!" );
-		PlayerController.s_PlayerController.Pickup( this );
+
+
+		//else
+		{
+			PlayerController.s_PlayerController.Pickup( this );
+		}
+	}
+
+	public static void ClearCurrent()
+	{
+		s_CurrentPickup = null;
+	}
+
+	public static Pickupable GetCurrent()
+	{
+		return s_CurrentPickup;
 	}
 
 	public void Pickup()
 	{
-		if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )
+		if ( mWasPicked )
+		{
+			Debug.Log( "New focus item is set!" );
+			s_CurrentPickup = this;
+		}
+
+		else if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )
 		{
 			mWasPicked = true;
 			transform.position = TableSpot.GetTableSpot();

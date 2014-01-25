@@ -95,6 +95,8 @@ public class PlayerController : MonoBehaviour
 
 	public void SwitchView( CharacterView view )
 	{
+		Pickupable.ClearCurrent();
+
 		mCharacterView = view;
 		
 		if ( view == CharacterView.Child )
