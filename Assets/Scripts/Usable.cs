@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public class Usable : MonoBehaviour 
 {
@@ -8,6 +10,7 @@ public class Usable : MonoBehaviour
 	public CharacterView UsedBy;
 	public bool DisableAfterUse = false;
 	public GameObject	HighlightObject;
+	public string AchievementCode;
 
 	private GameObject mHighlightObjectInstance;
 	private bool		mWasUsed;
@@ -97,6 +100,14 @@ public class Usable : MonoBehaviour
 				if ( mHighlightObjectInstance != null )
 				{
 					mHighlightObjectInstance.SetActive( false );
+				}
+
+				if ( AchievementCode.Length > 1 )
+				{
+					Social.ReportProgress( AchievementCode, 100.0f, ( bool success ) => 
+					                      {
+						// handle success or failure
+					});
 				}
 			}
 		}

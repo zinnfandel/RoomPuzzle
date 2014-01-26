@@ -1758,6 +1758,7 @@ MonoBehaviour:
   UsedBy: 2
   DisableAfterUse: 1
   HighlightObject: {fileID: 100000, guid: e86a556559400314298889f547c8f3bf, type: 2}
+  AchievementCode: 
 --- !u!61 &574459853
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1993,6 +1994,7 @@ MonoBehaviour:
   UsedBy: 2
   DisableAfterUse: 0
   HighlightObject: {fileID: 100000, guid: e86a556559400314298889f547c8f3bf, type: 2}
+  AchievementCode: CggIirmgxisQAhAG
 --- !u!61 &663834000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2807,6 +2809,7 @@ MonoBehaviour:
   UsedBy: 2
   DisableAfterUse: 0
   HighlightObject: {fileID: 100000, guid: e86a556559400314298889f547c8f3bf, type: 2}
+  AchievementCode: CggIirmgxisQAhAH
 --- !u!61 &976505543
 BoxCollider2D:
   m_ObjectHideFlags: 0
