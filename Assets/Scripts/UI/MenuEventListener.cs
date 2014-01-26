@@ -21,14 +21,14 @@ public class MenuEventListener : MonoBehaviour
 
 	void OnSelectViewEvent(SelectViewEvent e)
 	{
-		GameCamera.SetActive( false );
+		GameCamera.GetComponent<Camera>().enabled = false;
 		gameObject.SetActive( true );
 	}
 
 	void OnViewSelectedEvent(ViewSelectedEvent e)
 	{
 		Debug.Log( "Showing game camera" );
-		GameCamera.SetActive( true );
+		GameCamera.GetComponent<Camera>().enabled = true;
 		gameObject.SetActive( false );
 	}
 }
