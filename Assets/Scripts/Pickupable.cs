@@ -7,6 +7,8 @@ public class Pickupable : MonoBehaviour
 
 	public CharacterView PickedBy;
 	public bool			InvisibleToOthers = false;
+	public GameObject	HighlightObject;
+	private GameObject mHighlightObjectInstance;
 
 	bool	mWasPicked = false;
 
@@ -39,8 +41,48 @@ public class Pickupable : MonoBehaviour
 			}
 
 		}
+
+		if ( HighlightObject )
+		{
+			mHighlightObjectInstance = Instantiate( HighlightObject, transform.position, Quaternion.identity ) as GameObject;
+			mHighlightObjectInstance.transform.parent = this.transform;Events.instance.AddListener<ViewSelectedEvent>(OnViewSelectedEvent);
+			mHighlightObjectInstance.SetActive( false );
+		}
 	}
 	
+	void OnViewSelectedEvent(ViewSelectedEvent e)
+	{
+		if ( mHighlightObjectInstance != null && !mWasPicked )
+		{
+			if ( e.View == PickedBy )
+			{
+				mHighlightObjectInstance.SetActive( true );
+			}
+
+			else
+			{
+				mHighlightObjectInstance.SetActive( false );
+			}
+		}
+	}
+
+	void OnEnable()
+	{
+		Debug.Log( "On Enable" );
+		if ( mHighlightObjectInstance != null && !mWasPicked )
+		{
+			if ( PlayerController.s_PlayerController.GetView() == PickedBy )
+			{
+				mHighlightObjectInstance.SetActive( true );
+			}
+			
+			else
+			{
+				mHighlightObjectInstance.SetActive( false );
+			}
+		}
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -86,6 +128,11 @@ public class Pickupable : MonoBehaviour
 			foreach ( SpriteRenderer sprite in sprites )
 			{
 				sprite.enabled = true;
+			}
+
+			if ( mHighlightObjectInstance )
+			{
+				mHighlightObjectInstance.SetActive( false );
 			}
 		}
 	}

@@ -2,7 +2,8 @@ fileFormatVersion: 2
 guid: c6b0006845676eb4288a991bc71200f2
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - HighlightObject: {fileID: 100000, guid: e86a556559400314298889f547c8f3bf, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

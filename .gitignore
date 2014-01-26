@@ -5,6 +5,7 @@
 *.pydevproject
 .project
 bin/
+apk/
 tmp/
 *.tmp
 *.bak

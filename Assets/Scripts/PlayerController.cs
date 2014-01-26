@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using GooglePlayGames;
+using UnityEngine.SocialPlatforms;
 
 public enum CharacterView
 {
+	None,
 	Cat,
 	Child,
 	Grandma
@@ -32,7 +35,7 @@ public class PlayerController : MonoBehaviour
 		mPickupTarget = null;
 		Events.instance.AddListener<ViewSelectedEvent>(OnViewSelected);
 		Events.instance.AddListener<SelectViewEvent>(OnViewSelecting);
-		SwitchView( CharacterView.Child );
+		mCharacterView = CharacterView.None;
 	}
 
 	public void Pickup( Pickupable pTarget )
@@ -95,6 +98,30 @@ public class PlayerController : MonoBehaviour
 
 	public void SwitchView( CharacterView view )
 	{
+		if ( mCharacterView == CharacterView.None )
+		{
+			string code = " ";
+			switch ( view )
+			{
+			case CharacterView.Cat:
+				code = "CggIirmgxisQAhAA";
+				break;
+
+			case CharacterView.Child:
+				code = "CggIirmgxisQAhAC";
+				break;
+
+			case CharacterView.Grandma:
+				code = "CggIirmgxisQAhAB";
+				break;
+			}
+
+			Social.ReportProgress( code, 100.0f, ( bool success ) => 
+			{
+				// handle success or failure
+			});
+		}
+		
 		Pickupable.ClearCurrent();
 
 		mCharacterView = view;

@@ -5,12 +5,12 @@ PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   AndroidProfiler: 0
-  defaultScreenOrientation: 0
+  defaultScreenOrientation: 2
   targetDevice: 2
   targetGlesGraphics: 1
   targetResolution: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: com.lunarsong
   productName: RoomPuzzle
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -73,7 +73,7 @@ PlayerSettings:
     16:10: 1
     16:9: 0
     Others: 0
-  iPhoneBundleIdentifier: com.Company.ProductName
+  iPhoneBundleIdentifier: com.lunarsong.RoomPuzzle
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   productGUID: 13137381e321059408bb71b601648331
@@ -106,8 +106,8 @@ PlayerSettings:
   iPadHighResLandscapeSplashScreen: {fileID: 0}
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Shanee/Documents/Projects/RoomPuzzle/user.keystore
+  AndroidKeyaliasName: roompuzzle
   resolutionDialogBanner: {fileID: 0}
   m_BuildTargetIcons:
   - m_BuildTarget: 
