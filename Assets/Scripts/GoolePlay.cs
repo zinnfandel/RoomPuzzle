@@ -9,7 +9,18 @@ public class GoolePlay : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
+		#if UNITY_ANDROID
+
 		PlayGamesPlatform.Activate();
+
+		#elif UNITY_IPHONE
+
+
+		#else
+
+
+		#endif
+
 
 	}
 	

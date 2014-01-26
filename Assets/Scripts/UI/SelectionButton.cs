@@ -19,7 +19,22 @@ public class SelectionButton : MonoBehaviour
 	// Use this for initialization
 	void Start () 
 	{
-	
+		if ( Type == ButtonType.Google || Type == ButtonType.Achievements )
+		{
+			#if UNITY_ANDROID
+			
+
+			
+			#elif UNITY_EDITOR
+
+
+			
+			#else
+
+			enabled = false;
+			
+			#endif
+		}
 	}
 	
 	// Update is called once per frame
