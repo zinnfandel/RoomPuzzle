@@ -42,7 +42,6 @@ public class Player : MonoBehaviour
 	{
 		mPath = AStarGraph.GetPath( transform.position, vPosition );
 		mCurrentWaypoint = 0;
-		Debug.Log( mPath.Count() );
 	}
 
 	public void FixedUpdate () 

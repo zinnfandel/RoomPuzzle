@@ -13,7 +13,7 @@ public enum CharacterView
 
 public class PlayerController : MonoBehaviour 
 {
-	public static PlayerController s_PlayerController;
+	public static PlayerController s_PlayerController = null;
 
 	public Transform 	mTargetPosition;
 	public Player		mPlayer;
@@ -52,11 +52,9 @@ public class PlayerController : MonoBehaviour
 		//GetComponent<Animator>().Play(Walking.name);
 		if ( Input.GetMouseButtonDown( 0 ) )
 		{
-			
-			Debug.Log( "Test" );
+
 			Vector3 vWorldMousePosition = Camera.main.ScreenToWorldPoint( Input.mousePosition );
 			vWorldMousePosition.z = 0.0f;
-			Debug.Log( vWorldMousePosition );
 			mTargetPosition.position = vWorldMousePosition;
 			mPlayer.WalkTo( vWorldMousePosition );
 
@@ -121,10 +119,10 @@ public class PlayerController : MonoBehaviour
 				// handle success or failure
 			});
 		}
-		
-		Pickupable.ClearCurrent();
 
 		mCharacterView = view;
+
+		Pickupable.ClearCurrent();
 		
 		if ( view == CharacterView.Child )
 		{

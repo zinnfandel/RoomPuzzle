@@ -103,6 +103,7 @@ public class Pickupable : MonoBehaviour
 	public static void ClearCurrent()
 	{
 		s_CurrentPickup = null;
+		Events.instance.Raise( new SelectPickupEvent( null ) );
 	}
 
 	public static Pickupable GetCurrent()
@@ -116,6 +117,7 @@ public class Pickupable : MonoBehaviour
 		{
 			Debug.Log( "New focus item is set!" );
 			s_CurrentPickup = this;
+			Events.instance.Raise( new SelectPickupEvent( this ) );
 		}
 
 		else if ( TableSpot.HasRoomOnTable() && mWasPicked == false && PlayerController.s_PlayerController.GetView() == PickedBy )

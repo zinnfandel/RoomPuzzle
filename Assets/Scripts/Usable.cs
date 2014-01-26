@@ -21,14 +21,25 @@ public class Usable : MonoBehaviour
 			mHighlightObjectInstance.transform.parent = this.transform;
 			mHighlightObjectInstance.SetActive( false );
 			Events.instance.AddListener<ViewSelectedEvent>(OnViewSelectedEvent);
+			Events.instance.AddListener<SelectPickupEvent>(OnSelectPickupEvent);
 		}
 	}
 
-	void OnViewSelectedEvent(ViewSelectedEvent e)
+	void OnSelectPickupEvent( SelectPickupEvent pickupEvent )
 	{
-		if ( mHighlightObjectInstance != null && !mWasUsed )
+		HandleHighlightVisibility( PlayerController.s_PlayerController.GetView() );
+	}
+
+	void HandleHighlightVisibility( CharacterView view )
+	{
+		if ( UsedWith == null )
 		{
-			if ( e.View == UsedBy )
+			Debug.Log( "NONE!" );
+		}
+
+		if ( mHighlightObjectInstance != null && !mWasUsed && ( UsedWith == null || UsedWith == Pickupable.GetCurrent() ) )
+		{
+			if ( view == UsedBy )
 			{
 				mHighlightObjectInstance.SetActive( true );
 			}
@@ -38,21 +49,18 @@ public class Usable : MonoBehaviour
 				mHighlightObjectInstance.SetActive( false );
 			}
 		}
+	}
+
+	void OnViewSelectedEvent( ViewSelectedEvent e )
+	{
+		HandleHighlightVisibility( e.View );
 	}
 
 	void OnEnable()
 	{
-		if ( mHighlightObjectInstance != null && !mWasUsed )
+		if ( PlayerController.s_PlayerController.GetView() != null )
 		{
-			if ( PlayerController.s_PlayerController.GetView() == UsedBy )
-			{
-				mHighlightObjectInstance.SetActive( true );
-			}
-			
-			else
-			{
-				mHighlightObjectInstance.SetActive( false );
-			}
+			HandleHighlightVisibility( PlayerController.s_PlayerController.GetView() );
 		}
 	}
 	
