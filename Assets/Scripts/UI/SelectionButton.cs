@@ -31,7 +31,7 @@ public class SelectionButton : MonoBehaviour
 			
 			#else
 
-			enabled = false;
+			this.gameObject.SetActive( false );
 			
 			#endif
 		}
